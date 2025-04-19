@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://brumsh1gaoej2"
+path="res://.godot/imported/Goomba.aseprite-8f3b6f190c694450334d8b8a126a356d.res"
+
+[deps]
+
+source_file="res://assets/Goomba.aseprite"
+dest_files=["res://.godot/imported/Goomba.aseprite-8f3b6f190c694450334d8b8a126a356d.res"]
+
+[params]
+
