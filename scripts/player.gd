@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
@@ -19,11 +20,15 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
-	if direction:
-		velocity.x = direction * SPEED
-		animation_player.play("Moving")
-	else:
+	if !direction:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	velocity.x = direction * SPEED
+	animation_player.play("Moving")
+	if direction == 1:
+		sprite_2d.flip_h = 0
+	elif direction == -1:
+		sprite_2d.flip_h = 1
 
 	if velocity == Vector2(0, 0):
 		animation_player.stop()
