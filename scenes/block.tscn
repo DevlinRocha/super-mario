@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb2k22yhsaj6q"]
+[gd_scene load_steps=5 format=3 uid="uid://bb2k22yhsaj6q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtdk"]
-size = Vector2(16, 16)
+[ext_resource type="Script" uid="uid://bksi6hnoiho5r" path="res://scripts/block.gd" id="1_8r6n6"]
 
 [sub_resource type="SystemFont" id="SystemFont_3gtdk"]
 font_names = PackedStringArray("Monospace")
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_3gtdk"]
 font = SubResource("SystemFont_3gtdk")
@@ -13,11 +13,11 @@ shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0.5, 1)
 
-[node name="Block" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtdk"]
+size = Vector2(16, 16)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("RectangleShape2D_3gtdk")
+[node name="Block" type="StaticBody2D"]
+script = ExtResource("1_8r6n6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 clip_contents = true
@@ -40,3 +40,7 @@ text = "?"
 label_settings = SubResource("LabelSettings_3gtdk")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_3gtdk")
