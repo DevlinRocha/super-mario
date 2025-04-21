@@ -6,10 +6,20 @@ const JUMP_VELOCITY = -400.0
 
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _physics_process(delta: float) -> void:
+	handle_movement(delta)
+
+	if ray_cast_2d.is_colliding():
+		var collider = ray_cast_2d.get_collider()
+		if collider is Block:
+			collider.hit.emit()
+
+
+func handle_movement(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
