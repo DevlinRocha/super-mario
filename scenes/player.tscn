@@ -57,9 +57,14 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "6a3c1b4adf9bafedf196ba1ff9df8eb6"
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCast2DUp" type="RayCast2D" parent="."]
 visible = false
 target_position = Vector2(0, -8.5)
+
+[node name="RayCast2DDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 8.5)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
