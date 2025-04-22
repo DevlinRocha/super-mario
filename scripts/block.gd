@@ -16,6 +16,8 @@ func _ready() -> void:
 
 
 func _on_hit() -> void:
+	if !item: return
+
 	var item_instance := item.instantiate()
 	add_sibling(item_instance)
 	item_instance.position = position + Vector2(0, -16)
