@@ -51,6 +51,6 @@ func handle_movement(delta: float) -> void:
 			var collider = ray_cast_2d_down.get_collider()
 			print(collider.get_class())
 			if collider is Warp:
-				collider.enter.emit()
+				collider.enter.emit(self)
 
 	move_and_slide()
