@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb2k22yhsaj6q"]
+[gd_scene load_steps=6 format=3 uid="uid://bb2k22yhsaj6q"]
 
 [ext_resource type="Script" uid="uid://bksi6hnoiho5r" path="res://scripts/block.gd" id="1_8r6n6"]
+[ext_resource type="PackedScene" uid="uid://b2grvwslpd5fk" path="res://scenes/green.tscn" id="2_cgrg5"]
 
 [sub_resource type="SystemFont" id="SystemFont_3gtdk"]
 font_names = PackedStringArray("Monospace")
@@ -18,6 +19,7 @@ size = Vector2(16, 16)
 
 [node name="Block" type="StaticBody2D"]
 script = ExtResource("1_8r6n6")
+item = ExtResource("2_cgrg5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 clip_contents = true
