@@ -62,6 +62,7 @@ visible = false
 target_position = Vector2(0, -8.5)
 
 [node name="RayCast2DDown" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(0, 8.5)
 collide_with_areas = true
 collide_with_bodies = false
