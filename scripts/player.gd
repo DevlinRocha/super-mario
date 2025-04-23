@@ -49,7 +49,6 @@ func handle_movement(delta: float) -> void:
 	if Input.is_action_just_pressed("down"):
 		if ray_cast_2d_down.is_colliding():
 			var collider = ray_cast_2d_down.get_collider()
-			print(collider.get_class())
 			if collider is Warp:
 				collider.enter.emit(self)
 
