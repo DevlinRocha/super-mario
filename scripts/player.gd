@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 160.0
-const JUMP_VELOCITY = -352.0
+const SPEED := 160.0
+const JUMP_VELOCITY := -352.0
 
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -18,6 +18,11 @@ func _physics_process(delta: float) -> void:
 	if ray_cast_2d_up.is_colliding():
 		var collider = ray_cast_2d_up.get_collider()
 		if collider is Block:
+			collider.hit.emit()
+
+	if ray_cast_2d_down.is_colliding():
+		var collider = ray_cast_2d_down.get_collider()
+		if collider is Enemy:
 			collider.hit.emit()
 
 
