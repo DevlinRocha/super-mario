@@ -65,7 +65,6 @@ target_position = Vector2(0, -8.5)
 visible = false
 target_position = Vector2(0, 8.5)
 collide_with_areas = true
-collide_with_bodies = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
