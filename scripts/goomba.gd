@@ -1,8 +1,18 @@
+class_name Enemy
+
 extends CharacterBody2D
 
 
-const SPEED = 40
+signal hit
+
+
+const SPEED := 40
 var direction := -1
+
+
+func _ready() -> void:
+	hit.connect(_on_hit)
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -15,3 +25,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_hit() -> void:
+	queue_free()
