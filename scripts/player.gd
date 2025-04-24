@@ -1,3 +1,6 @@
+class_name Player
+
+
 extends CharacterBody2D
 
 
@@ -5,11 +8,18 @@ const SPEED := 160.0
 const JUMP_VELOCITY := -352.0
 
 
+signal hit
+
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ray_cast_2d_up: RayCast2D = $RayCast2DUp
 @onready var ray_cast_2d_down: RayCast2D = $RayCast2DDown
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+
+
+func _ready() -> void:
+	hit.connect(_on_hit)
 
 
 func _physics_process(delta: float) -> void:
@@ -58,3 +68,7 @@ func handle_movement(delta: float) -> void:
 				collider.enter.emit(self)
 
 	move_and_slide()
+
+
+func _on_hit() -> void:
+	get_tree().reload_current_scene()
