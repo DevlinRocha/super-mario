@@ -23,6 +23,11 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+	for i in get_slide_collision_count():
+		var collider = get_slide_collision(i).get_collider()
+		if collider is Player:
+			collider.hit.emit()
+
 
 func _on_hit() -> void:
 	queue_free()
