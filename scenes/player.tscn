@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cm5xjat8emnnv"]
+[gd_scene load_steps=7 format=4 uid="uid://cm5xjat8emnnv"]
 
 [ext_resource type="Script" uid="uid://cut8vka3k6i5q" path="res://scripts/player.gd" id="1_3vyb7"]
 
@@ -30,6 +30,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
 size = Vector2(12, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
+size = Vector2(12, 3)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3vyb7")
 
@@ -40,6 +43,7 @@ hframes = 2
 vframes = 2
 frame = 1
 metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
 "pending_changes": {}
 }
 metadata/_aseprite_wizard_config_ = {
@@ -71,6 +75,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_g2els")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_u8vuu")
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_3vyb7")
