@@ -14,12 +14,14 @@ signal hit
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ray_cast_2d_up: RayCast2D = $RayCast2DUp
 @onready var ray_cast_2d_down: RayCast2D = $RayCast2DDown
+@onready var hitbox: Area2D = $Hitbox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 
 func _ready() -> void:
 	hit.connect(_on_hit)
+	hitbox.body_entered.connect(_on_body_entered_hitbox)
 
 
 func _physics_process(delta: float) -> void:
@@ -28,11 +30,6 @@ func _physics_process(delta: float) -> void:
 	if ray_cast_2d_up.is_colliding():
 		var collider = ray_cast_2d_up.get_collider()
 		if collider is Block:
-			collider.hit.emit()
-
-	if ray_cast_2d_down.is_colliding():
-		var collider = ray_cast_2d_down.get_collider()
-		if collider is Enemy:
 			collider.hit.emit()
 
 
@@ -72,3 +69,9 @@ func handle_movement(delta: float) -> void:
 
 func _on_hit() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_body_entered_hitbox(body: Node2D) -> void:
+	if body is Enemy:
+		body.hit.emit()
+		velocity.y = JUMP_VELOCITY / 2
