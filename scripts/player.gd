@@ -58,11 +58,10 @@ func handle_movement(delta: float) -> void:
 	elif direction == -1:
 		sprite_2d.flip_h = 1
 
-	if Input.is_action_just_pressed("down"):
-		if ray_cast_2d_down.is_colliding():
-			var collider = ray_cast_2d_down.get_collider()
-			if collider is Warp:
-				collider.enter.emit(self)
+	if Input.is_action_just_pressed("down") and is_on_floor() and ray_cast_2d_down.is_colliding():
+		var collider = ray_cast_2d_down.get_collider()
+		if collider is Warp:
+			collider.enter.emit(self)
 
 	move_and_slide()
 
