@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dtgwvo2mvcirf" path="res://scripts/warp.gd" id="1_uw2au"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw2au"]
-size = Vector2(32, 8)
+size = Vector2(20, 8)
 
 [node name="Warp" type="Area2D"]
 script = ExtResource("1_uw2au")
