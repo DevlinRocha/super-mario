@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://y0hrr47hg4nq"]
+
+[sub_resource type="SystemFont" id="SystemFont_tekt2"]
+font_names = PackedStringArray("Monospace")
+
+[resource]
+default_font = SubResource("SystemFont_tekt2")
