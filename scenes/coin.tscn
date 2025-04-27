@@ -1,5 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dluv1nl7vqfjo"]
 
+[ext_resource type="Script" uid="uid://3ulojmbdntnx" path="res://scripts/coin.gd" id="1_rwqht"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kahox"]
 radius = 8.0
 
