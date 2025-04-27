@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfrvkswhdxngf"]
+[gd_scene load_steps=3 format=3 uid="uid://cfrvkswhdxngf"]
 
 [ext_resource type="Theme" uid="uid://y0hrr47hg4nq" path="res://resources/theme.tres" id="1_x4jx1"]
+[ext_resource type="Script" uid="uid://ctepbk1mob0ow" path="res://scripts/ui.gd" id="1_yev5y"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_yev5y")
 metadata/_edit_use_anchors_ = true
 
 [node name="HUD" type="HBoxContainer" parent="."]
@@ -24,6 +26,7 @@ layout_mode = 2
 text = "MARIO"
 
 [node name="Score" type="Label" parent="HUD/PlayerScore"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "000000"
 
