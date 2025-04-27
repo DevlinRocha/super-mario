@@ -9,6 +9,7 @@ const JUMP_VELOCITY := -352.0
 
 
 signal hit
+signal coin_collected
 
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
