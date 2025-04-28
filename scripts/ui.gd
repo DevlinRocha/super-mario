@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _on_coin_collected() -> void:
 	increase_score(200)
-	coin_count.text = "x" + str("%02d" % (int(coin_count.text) + 1))
+	increase_coins(1)
 
 
 func _on_goomba_hit() -> void:
@@ -25,3 +25,7 @@ func _on_goomba_hit() -> void:
 
 func increase_score(value: int) -> void:
 	score.text = str("%06d" % (int(score.text) + value))
+
+
+func increase_coins(value: int) -> void:
+	coin_count.text = "x" + str("%02d" % (int(coin_count.text) + value))
