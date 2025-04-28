@@ -40,7 +40,7 @@ layout_mode = 2
 
 [node name="CoinCount" type="Label" parent="HUD/Coins"]
 layout_mode = 2
-text = "x20"
+text = "x00"
 
 [node name="WorldLevel" type="VBoxContainer" parent="HUD"]
 layout_mode = 2
