@@ -3,6 +3,7 @@ extends CanvasLayer
 
 @onready var player: Player = $"../Player"
 @onready var score: Label = %Score
+@onready var coin_count: Label = %CoinCount
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,3 +13,4 @@ func _ready() -> void:
 
 func _on_coin_collected() -> void:
 	score.text = str("%06d" % (int(score.text) + 200))
+	coin_count.text = "x" + str("%02d" % (int(coin_count.text) + 1))

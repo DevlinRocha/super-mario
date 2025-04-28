@@ -39,6 +39,7 @@ size_flags_vertical = 4
 layout_mode = 2
 
 [node name="CoinCount" type="Label" parent="HUD/Coins"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "x00"
 
