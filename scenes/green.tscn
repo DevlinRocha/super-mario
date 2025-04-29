@@ -1,17 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2grvwslpd5fk"]
+[gd_scene load_steps=3 format=4 uid="uid://b2grvwslpd5fk"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_mb6d5"]
+_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABsAAAAUklGRmQAAABXRUJQVlA4TFcAAAAvD8ADABcgFkzm/4aUpEAgyd9iwRnEgsn8Efoynf/ATw1sI9tWgltoDRDecnBCOnk1ILnLfYX+GiL6PwtdO23UGSYpqKVQq8Lcdr3h643RIlgQBBNHbAEA")
+size_override = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mb6d5"]
 size = Vector2(16, 16)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_mb6d5")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/ground.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "9b9ac5cf4e629debafafd5925e35c647"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_mb6d5")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-color = Color(0, 1, 0, 1)
