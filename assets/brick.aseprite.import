@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c1e3q154ghm0a"
+path="res://.godot/imported/brick.aseprite-c996198fcfc1af8a92dd5d82b12f8f4f.res"
+
+[deps]
+
+source_file="res://assets/brick.aseprite"
+dest_files=["res://.godot/imported/brick.aseprite-c996198fcfc1af8a92dd5d82b12f8f4f.res"]
+
+[params]
+
