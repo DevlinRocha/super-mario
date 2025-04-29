@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=4 uid="uid://ci3i1qnoxpvs5"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_5l4w1"]
+_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABQAAAAUklGRkgAAABXRUJQVlA4TDwAAAAvD8ADABcgFkzm/4aUpEAgyd9iwRnEgsn8Efoynf/ATw0G2UYaz3xOcpqfd4jof2xb5gGYfYDMD2D2AQA=")
+size_override = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtdk"]
+size = Vector2(16, 16)
+
+[node name="Brick" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_5l4w1")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/brick.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "54c05a02a7583f6901194fe200181827"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_3gtdk")
