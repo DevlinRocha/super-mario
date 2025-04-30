@@ -10,6 +10,9 @@ const SPEED := 40
 var direction := -1
 
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
 func _ready() -> void:
 	hit.connect(_on_hit)
 
@@ -20,6 +23,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	velocity.x = direction * SPEED
+	animation_player.play("Moving")
 
 	move_and_slide()
 
