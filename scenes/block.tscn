@@ -1,17 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb2k22yhsaj6q"]
+[gd_scene load_steps=4 format=4 uid="uid://bb2k22yhsaj6q"]
 
 [ext_resource type="Script" uid="uid://bksi6hnoiho5r" path="res://scripts/block.gd" id="1_8r6n6"]
 
-[sub_resource type="SystemFont" id="SystemFont_3gtdk"]
-font_names = PackedStringArray("Monospace")
-subpixel_positioning = 0
-
-[sub_resource type="LabelSettings" id="LabelSettings_3gtdk"]
-font = SubResource("SystemFont_3gtdk")
-font_size = 20
-shadow_size = 4
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(0.5, 1)
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_8r6n6"]
+_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABsAAAAUklGRmQAAABXRUJQVlA4TFgAAAAvD8ADEB8gEEjyt5hgXSFBwv/oYWP+A3wFjGrbVhKNFH8xZGY3BLRwG+n9loBCPwMOISL6Pwf7dXmSREOG8rSQwQY5pH95Bul8SDdDcoR08peGYyhJCCEE")
+size_override = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtdk"]
 size = Vector2(16, 16)
@@ -21,27 +14,26 @@ collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_8r6n6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-clip_contents = true
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-color = Color(1, 1, 0, 1)
-
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -3.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "?"
-label_settings = SubResource("LabelSettings_3gtdk")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_8r6n6")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/item_block.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d2464b9055ddfd427ddd41d765187c0f"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
