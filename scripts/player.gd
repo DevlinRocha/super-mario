@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 const SPEED := 160.0
 const JUMP_VELOCITY := -352.0
+var jumping := false
 
 
 signal coin_collected
@@ -37,10 +38,15 @@ func handle_movement(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	else:
+		jumping = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		animation_player.stop()
+		sprite_2d.frame = 4
+		jumping = true
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
@@ -49,7 +55,7 @@ func handle_movement(delta: float) -> void:
 
 	velocity.x = direction * SPEED
 	# Handle animations.
-	animation_player.play("Moving")
+	if not jumping: animation_player.play("Moving")
 	if velocity == Vector2(0, 0):
 		animation_player.stop()
 		sprite_2d.frame = 0
