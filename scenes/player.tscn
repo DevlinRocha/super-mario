@@ -27,8 +27,9 @@ _data = {
 &"Moving": SubResource("Animation_3vyb7")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
-size = Vector2(12, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 6.0
+height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(12, 3)
@@ -77,7 +78,7 @@ libraries = {
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource("RectangleShape2D_u8vuu")
+shape = SubResource("CapsuleShape2D_3vyb7")
 
 [node name="Hitbox" type="Area2D" parent="."]
 visible = false
