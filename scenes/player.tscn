@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cut8vka3k6i5q" path="res://scripts/player.gd" id="1_3vyb7"]
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_u8vuu"]
-_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAAACAQAAUklGRvoAAABXRUJQVlA4TO4AAAAvH8AHEB8gEEhy2p9tDYFAkr/LjAsEkpz2Z3v+A/BXAdzatlUr68n3//E7iEi1iXtKQJ7gkZMT84vAI3eLSL0FpwQidzlYERH978OBAh+l3KgFVa9pyIXxWnqHG5HlZbd3bQ2ZmMmODRtkLXKK61lYXacphqbHBMG5oeMxbgw1pHF3tOFqb4WsWv9aNzhQTbzpDjeqiZvjUk5KPxIBhgAICWly/s/Av5kb+2/mQ0v/ZoKZfzPTM9m/mfbhxr+ZpY4EIwmYXXfltBqCGlce9yAaz8qpUuwZdw+WvpBPhRWLqMKHoclaCELKJAGBA2IA")
-size_override = Vector2(32, 32)
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_3vyb7"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAAA0AQAAUklGRiwBAABXRUJQVlA4TB8BAAAvL8AHECcgECCk+d8RYENB2gZM/bupvx0FaRswdVX/vnbmPwDAf0UagBDJdtjmSWMAehoBiN4YQgFY7uMPyvn6MYSI/jNw20hRFo4vA78ALhvAG4FtH68EnL3ijaB1ddV3gqmpV4KpzvJGgI8kvBJwMPyJJtI4GsdigR4GVdG4RonxmYQqT4/5xff5oHWfQxBsHw3fzf5y26dC2W0CF3UHbPvBGxgK5YePy0BbxhW4zBI+A1jQiG00kuGz7X5JKPg9PkI27GMXZGzWXZDSqLkLGjPm1NQm6DlUV90EPYMSuQl+uCTVKEiPoXHlgVxc+bGTU6Hqg0fLSns/VOjBTmkrlFPV68//zHDgEwTOoI/QF64fYGt5o/e+IW90g41sAAA=")
+size_override = Vector2(48, 32)
 
 [sub_resource type="Animation" id="Animation_3vyb7"]
 length = 0.4
@@ -43,8 +43,8 @@ script = ExtResource("1_3vyb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_u8vuu")
-hframes = 2
+texture = SubResource("PortableCompressedTexture2D_3vyb7")
+hframes = 3
 vframes = 2
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
@@ -63,7 +63,7 @@ metadata/_aseprite_wizard_config_ = {
 "slice": "",
 "source": "res://assets/Mario.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "6a3c1b4adf9bafedf196ba1ff9df8eb6"
+metadata/_aseprite_wizard_source_file_hash_ = "c7e378aba7313a44cc3dfa01f7fab8a4"
 
 [node name="RayCast2DUp" type="RayCast2D" parent="."]
 visible = false
