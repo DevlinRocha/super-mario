@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cym7acdg3mmg8"
+path="res://.godot/imported/pipe_entrance.aseprite-9d002589e6a8d31e26ad802f260c4742.res"
+
+[deps]
+
+source_file="res://assets/pipe_entrance.aseprite"
+dest_files=["res://.godot/imported/pipe_entrance.aseprite-9d002589e6a8d31e26ad802f260c4742.res"]
+
+[params]
+
