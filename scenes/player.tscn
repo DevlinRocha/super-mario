@@ -7,7 +7,7 @@ _data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAAA0AQAAUklGRiwBAABXRUJQVlA4TB8
 size_override = Vector2(48, 32)
 
 [sub_resource type="Animation" id="Animation_3vyb7"]
-length = 0.4
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -16,10 +16,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [1, 2, 3, 2]
+"values": [1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g2els"]
@@ -63,7 +63,7 @@ metadata/_aseprite_wizard_config_ = {
 "slice": "",
 "source": "res://assets/Mario.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "c7e378aba7313a44cc3dfa01f7fab8a4"
+metadata/_aseprite_wizard_source_file_hash_ = "7f9b9eb152d56505f465d56fbc82b24c"
 
 [node name="RayCast2DUp" type="RayCast2D" parent="."]
 visible = false
