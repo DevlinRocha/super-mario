@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://b7giw71i7g27p"]
+[gd_scene load_steps=8 format=4 uid="uid://b7giw71i7g27p"]
 
 [ext_resource type="Script" uid="uid://ctrmk5msnipo5" path="res://scripts/goomba.gd" id="1_21hcc"]
 
@@ -27,12 +27,18 @@ _data = {
 &"Moving": SubResource("Animation_s1jgw")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2qtu"]
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1jgw"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgpj4"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21hcc"]
+radius = 7.0
 
 [node name="Goomba" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 6
 script = ExtResource("1_21hcc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -65,4 +71,22 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource("RectangleShape2D_y2qtu")
+shape = SubResource("CircleShape2D_s1jgw")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_fgpj4")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_21hcc")
+debug_color = Color(1, 0.6, 0, 0.419608)
