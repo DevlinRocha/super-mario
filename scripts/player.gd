@@ -8,20 +8,20 @@ const SPEED := 160.0
 const JUMP_VELOCITY := -352.0
 
 
-signal hit
 signal coin_collected
 
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ray_cast_2d_up: RayCast2D = $RayCast2DUp
 @onready var ray_cast_2d_down: RayCast2D = $RayCast2DDown
+@onready var hurtbox: Area2D = $Hurtbox
 @onready var hitbox: Area2D = $Hitbox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
-	hit.connect(_on_hit)
-	hitbox.body_entered.connect(_on_body_entered_hitbox)
+	hurtbox.area_entered.connect(_on_area_entered_hurtbox)
+	hitbox.area_entered.connect(_on_area_entered_hitbox)
 
 
 func _physics_process(delta: float) -> void:
@@ -67,11 +67,10 @@ func handle_movement(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_hit() -> void:
+func _on_area_entered_hurtbox(area: Area2D) -> void:
 	get_tree().reload_current_scene()
 
 
-func _on_body_entered_hitbox(body: Node2D) -> void:
-	if body is Enemy:
-		body.hit.emit()
+func _on_area_entered_hitbox(area: Area2D) -> void:
+	if not is_on_floor():
 		velocity.y = JUMP_VELOCITY / 2
