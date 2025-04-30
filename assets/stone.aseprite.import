@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://clst07mqfkjrt"
+path="res://.godot/imported/stone.aseprite-341804c19e445648dadf464fcca4def1.res"
+
+[deps]
+
+source_file="res://assets/stone.aseprite"
+dest_files=["res://.godot/imported/stone.aseprite-341804c19e445648dadf464fcca4def1.res"]
+
+[params]
+
