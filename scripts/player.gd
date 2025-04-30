@@ -17,7 +17,6 @@ signal coin_collected
 @onready var ray_cast_2d_down: RayCast2D = $RayCast2DDown
 @onready var hitbox: Area2D = $Hitbox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 
 func _ready() -> void:
@@ -53,6 +52,7 @@ func handle_movement(delta: float) -> void:
 	animation_player.play("Moving")
 	if velocity == Vector2(0, 0):
 		animation_player.stop()
+		sprite_2d.frame = 0
 
 	if direction == 1:
 		sprite_2d.flip_h = 0
