@@ -30,6 +30,8 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("Moving")
 
 	move_and_slide()
+	if is_on_wall():
+		direction *= -1
 
 
 func _on_area_entered_hurtbox(area: Area2D) -> void:
