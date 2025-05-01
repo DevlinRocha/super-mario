@@ -65,7 +65,7 @@ func handle_movement(delta: float) -> void:
 		sprite_2d.flip_h = 0
 	elif direction == -1:
 		sprite_2d.flip_h = 1
-		if position.x <= camera_2d.limit_left:
+		if position.x <= camera_2d.limit_left + 10:
 			velocity.x = 0
 
 
