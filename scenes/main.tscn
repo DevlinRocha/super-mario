@@ -26,8 +26,10 @@ position = Vector2(49, 392)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(160, -23)
-ignore_rotation = false
-zoom = Vector2(2.76, 2.76)
+zoom = Vector2(2.75, 2.75)
+limit_left = 0
+limit_top = 192
+limit_bottom = 428
 
 [node name="Goomba" parent="." instance=ExtResource("5_tbgi4")]
 position = Vector2(346, 392)
