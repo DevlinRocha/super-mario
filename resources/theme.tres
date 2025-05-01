@@ -2,6 +2,8 @@
 
 [sub_resource type="SystemFont" id="SystemFont_tekt2"]
 font_names = PackedStringArray("Monospace")
+font_weight = 600
 
 [resource]
 default_font = SubResource("SystemFont_tekt2")
+default_font_size = 32
