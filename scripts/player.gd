@@ -18,6 +18,7 @@ signal coin_collected
 @onready var hurtbox: Area2D = $Hurtbox
 @onready var hitbox: Area2D = $Hitbox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var camera_2d: Camera2D = $Camera2D
 
 
 func _ready() -> void:
@@ -64,6 +65,9 @@ func handle_movement(delta: float) -> void:
 		sprite_2d.flip_h = 0
 	elif direction == -1:
 		sprite_2d.flip_h = 1
+		if position.x <= camera_2d.limit_left:
+			velocity.x = 0
+
 
 	if Input.is_action_just_pressed("down") and is_on_floor() and ray_cast_2d_down.is_colliding():
 		var collider = ray_cast_2d_down.get_collider()
