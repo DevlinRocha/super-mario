@@ -30,3 +30,5 @@ func decrement_timer() -> void:
 	timer.text = str(int(timer.text) - 1)
 	if int(timer.text) > 0:
 		get_tree().create_timer(1).timeout.connect(decrement_timer)
+	else:
+		get_tree().reload_current_scene()
