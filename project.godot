@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
+[global_group]
+
+Hurtbox="Take damage when colliding"
+Hitbox="Deal damage when colliding"
+
 [input]
 
 up={
