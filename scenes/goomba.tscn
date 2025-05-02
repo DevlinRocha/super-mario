@@ -72,9 +72,11 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_s1jgw")
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["Hurtbox"]]
+visible = false
 position = Vector2(0, -2)
 collision_layer = 2
 
@@ -85,6 +87,7 @@ shape = SubResource("CapsuleShape2D_21hcc")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Hitbox"]]
+visible = false
 position = Vector2(0, 1)
 collision_layer = 2
 

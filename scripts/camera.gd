@@ -9,6 +9,7 @@ var greatest_position: float
 func _ready() -> void:
 	starting_position = get_screen_center_position().x
 	greatest_position = starting_position
+	drag_right_margin = -0.2
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

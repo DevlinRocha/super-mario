@@ -6,4 +6,5 @@ font_weight = 600
 
 [resource]
 default_font = SubResource("SystemFont_tekt2")
-default_font_size = 32
+default_font_size = 8
+VBoxContainer/constants/separation = 0
