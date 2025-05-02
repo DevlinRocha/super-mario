@@ -18,6 +18,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = !get_tree().paused
 
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+
 
 func _on_coin_collected() -> void:
 	increase_score(200)
