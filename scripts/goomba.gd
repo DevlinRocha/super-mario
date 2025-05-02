@@ -40,4 +40,6 @@ func _on_area_entered_hurtbox(area: Area2D) -> void:
 		direction = 0
 		sprite_2d.frame = 2
 		hit.emit()
-		await get_tree().create_timer(0.25).timeout.connect(func(): queue_free())
+		hurtbox.collision_layer = 0
+		hitbox.collision_layer = 0
+		await get_tree().create_timer(0.5).timeout.connect(func(): queue_free())
