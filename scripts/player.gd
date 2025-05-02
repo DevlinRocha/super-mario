@@ -52,7 +52,7 @@ func handle_movement(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
 	if !direction:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, delta)
 
 	velocity.x = direction * SPEED
 	# Handle animations.
