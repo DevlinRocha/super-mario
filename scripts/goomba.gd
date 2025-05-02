@@ -35,8 +35,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_entered_hurtbox(area: Area2D) -> void:
-	animation_player.stop()
-	direction = 0
-	sprite_2d.frame = 2
-	hit.emit()
-	await get_tree().create_timer(0.25).timeout.connect(func(): queue_free())
+	if area.is_in_group("Hitbox"):
+		animation_player.stop()
+		direction = 0
+		sprite_2d.frame = 2
+		hit.emit()
+		await get_tree().create_timer(0.25).timeout.connect(func(): queue_free())

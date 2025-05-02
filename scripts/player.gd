@@ -78,9 +78,10 @@ func handle_movement(delta: float) -> void:
 
 
 func _on_area_entered_hurtbox(area: Area2D) -> void:
-	get_tree().reload_current_scene()
+	if area.is_in_group("Hitbox"):
+		get_tree().reload_current_scene()
 
 
 func _on_area_entered_hitbox(area: Area2D) -> void:
-	if not is_on_floor():
+	if area.is_in_group("Hurtbox") and not is_on_floor():
 		velocity.y = JUMP_VELOCITY / 2
