@@ -13,6 +13,12 @@ func _ready() -> void:
 	player.increase_score.connect(increase_score)
 	decrement_timer()
 
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = !get_tree().paused
+
+
 func _on_coin_collected() -> void:
 	increase_score(200)
 	increase_coins(1)
@@ -29,6 +35,6 @@ func increase_coins(value: int) -> void:
 func decrement_timer() -> void:
 	timer.text = str(int(timer.text) - 1)
 	if int(timer.text) > 0:
-		get_tree().create_timer(1).timeout.connect(decrement_timer)
+		get_tree().create_timer(1, false).timeout.connect(decrement_timer)
 	else:
 		get_tree().reload_current_scene()
