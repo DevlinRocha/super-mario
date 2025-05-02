@@ -9,8 +9,8 @@ const JUMP_VELOCITY := -352.0
 var jumping := false
 
 
+signal increase_score
 signal coin_collected
-
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ray_cast_2d_up: RayCast2D = $RayCast2DUp
@@ -85,3 +85,4 @@ func _on_area_entered_hurtbox(area: Area2D) -> void:
 func _on_area_entered_hitbox(area: Area2D) -> void:
 	if area.is_in_group("Hurtbox") and not is_on_floor():
 		velocity.y = JUMP_VELOCITY / 2
+		increase_score.emit(100)
