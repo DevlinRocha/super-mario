@@ -35,7 +35,7 @@ height = 16.0
 size = Vector2(12, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
-size = Vector2(12, 3)
+size = Vector2(16, 3)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 4
@@ -83,8 +83,7 @@ libraries = {
 visible = false
 shape = SubResource("CapsuleShape2D_3vyb7")
 
-[node name="Hurtbox" type="Area2D" parent="."]
-visible = false
+[node name="Hurtbox" type="Area2D" parent="." groups=["Hurtbox"]]
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
@@ -92,8 +91,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_g2els")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
 
-[node name="Hitbox" type="Area2D" parent="."]
-visible = false
+[node name="Hitbox" type="Area2D" parent="." groups=["Hitbox"]]
 position = Vector2(0, 8)
 collision_mask = 2
 
