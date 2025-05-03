@@ -19,6 +19,7 @@ var direction := -1
 func _ready() -> void:
 	hurtbox.area_entered.connect(_on_area_entered_hurtbox)
 	hit.connect(_on_hit)
+	animation_player.play("Moving")
 
 
 func _physics_process(delta: float) -> void:
@@ -26,9 +27,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	velocity.x = direction * SPEED
-	if direction != 0:
-		animation_player.play("Moving")
+	velocity.x = SPEED * direction
 
 	move_and_slide()
 	if is_on_wall():
@@ -37,13 +36,21 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_entered_hurtbox(area: Area2D) -> void:
 	if area.is_in_group("Hitbox"):
-		hit.emit()
+		animation_player.stop()
+		direction = 0
+		sprite_2d.frame = 2
+		hurtbox.collision_layer = 0
+		hurtbox.collision_mask = 0
+		hitbox.collision_layer = 0
+		await get_tree().create_timer(0.5).timeout.connect(func(): queue_free())
+
 
 
 func _on_hit() -> void:
 	animation_player.stop()
-	direction = 0
-	sprite_2d.frame = 2
 	hurtbox.collision_layer = 0
+	hurtbox.collision_mask = 0
 	hitbox.collision_layer = 0
-	await get_tree().create_timer(0.5).timeout.connect(func(): queue_free())
+	collision_mask = 0
+	sprite_2d.flip_v = true
+	velocity.y = -160
