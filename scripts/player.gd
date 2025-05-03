@@ -7,7 +7,7 @@ extends CharacterBody2D
 const SPEED := 160.0
 const JUMP_VELOCITY := -352.0
 var jumping := false
-
+var bonus_points := 0
 
 signal increase_score
 signal coin_collected
@@ -41,6 +41,7 @@ func handle_movement(delta: float) -> void:
 		velocity += get_gravity() * delta
 	else:
 		jumping = false
+		bonus_points = 0
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -85,4 +86,5 @@ func _on_area_entered_hurtbox(area: Area2D) -> void:
 func _on_area_entered_hitbox(area: Area2D) -> void:
 	if area.is_in_group("Hurtbox") and not is_on_floor():
 		velocity.y = JUMP_VELOCITY / 2
-		increase_score.emit(100)
+		increase_score.emit(100 + bonus_points)
+		bonus_points = 100
