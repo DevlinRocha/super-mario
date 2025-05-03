@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ctepbk1mob0ow" path="res://scripts/ui.gd" id="1_yev5y"]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_yev5y")
 metadata/_edit_use_anchors_ = true
 
