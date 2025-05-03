@@ -17,7 +17,6 @@ func _ready() -> void:
 
 
 func _on_hit() -> void:
-	label.visible = 0
 	if !item: return
 
 	var item_instance := item.instantiate()
