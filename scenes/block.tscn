@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://bb2k22yhsaj6q"]
+[gd_scene load_steps=5 format=4 uid="uid://bb2k22yhsaj6q"]
 
 [ext_resource type="Script" uid="uid://bksi6hnoiho5r" path="res://scripts/block.gd" id="1_8r6n6"]
 
@@ -7,6 +7,9 @@ _data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABsAAAAUklGRmQAAABXRUJQVlA4TFg
 size_override = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtdk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r6n6"]
 size = Vector2(16, 16)
 
 [node name="Block" type="StaticBody2D"]
@@ -38,3 +41,14 @@ metadata/_aseprite_wizard_source_file_hash_ = "d2464b9055ddfd427ddd41d765187c0f"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_3gtdk")
+
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 18
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_8r6n6")
+debug_color = Color(1, 0.6, 0, 0.419608)
