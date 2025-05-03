@@ -68,6 +68,7 @@ metadata/_aseprite_wizard_source_file_hash_ = "7f9b9eb152d56505f465d56fbc82b24c"
 [node name="RayCast2DUp" type="RayCast2D" parent="."]
 visible = false
 target_position = Vector2(0, -8.5)
+collision_mask = 4
 
 [node name="RayCast2DDown" type="RayCast2D" parent="."]
 visible = false
