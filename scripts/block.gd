@@ -8,7 +8,6 @@ signal hit
 
 
 @export var item: PackedScene
-@onready var label: Label = $ColorRect/Label
 
 
 # Called when the node enters the scene tree for the first time.
