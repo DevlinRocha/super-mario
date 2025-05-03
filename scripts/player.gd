@@ -4,7 +4,7 @@ class_name Player
 extends CharacterBody2D
 
 
-const SPEED := 160.0
+const SPEED := 120.0
 const JUMP_VELOCITY := -352.0
 var jumping := false
 var bonus_points := 0
