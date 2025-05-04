@@ -11,6 +11,7 @@ signal hit
 @onready var hitbox: Area2D = $Hitbox
 
 
+var items: TileMapLayer
 var enemies_above := []
 
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 	hit.connect(_on_hit)
 	hitbox.body_entered.connect(_on_body_entered_hitbox)
 	hitbox.body_exited.connect(_on_body_exited_hitbox)
+	items = get_node("../../Items")
 
 
 func _on_hit() -> void:
@@ -26,11 +28,10 @@ func _on_hit() -> void:
 		for enemy in enemies_above:
 			enemy.hit.emit()
 
-	if !item: return
-
-	var item_instance := item.instantiate()
-	add_sibling(item_instance)
-	item_instance.position = position + Vector2(0, -16)
+	var grid_position := items.local_to_map(position)
+	var source_id := items.get_cell_source_id(grid_position)
+	var alt_id = items.get_cell_alternative_tile(grid_position)
+	items.set_cell(grid_position + Vector2i(0, -1), source_id, Vector2i(0, 0), alt_id)
 
 
 func _on_body_entered_hitbox(body: Node2D) -> void:
