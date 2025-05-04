@@ -32,6 +32,7 @@ func _on_hit() -> void:
 	var source_id := items.get_cell_source_id(grid_position)
 	var alt_id = items.get_cell_alternative_tile(grid_position)
 	items.set_cell(grid_position + Vector2i(0, -1), source_id, Vector2i(0, 0), alt_id)
+	items.set_cell(grid_position, -1)
 
 
 func _on_body_entered_hitbox(body: Node2D) -> void:
