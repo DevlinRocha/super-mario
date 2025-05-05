@@ -14,7 +14,7 @@ size = Vector2(16, 1)
 
 [node name="ItemBlock" type="StaticBody2D"]
 collision_layer = 4
-collision_mask = 31
+collision_mask = 27
 script = ExtResource("1_8r6n6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

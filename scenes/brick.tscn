@@ -14,7 +14,7 @@ size = Vector2(16, 1)
 
 [node name="Brick" type="StaticBody2D"]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 27
 script = ExtResource("1_5l4w1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
