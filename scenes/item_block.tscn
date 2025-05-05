@@ -10,7 +10,7 @@ size_override = Vector2(16, 16)
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8r6n6"]
-size = Vector2(16, 16)
+size = Vector2(16, 1)
 
 [node name="ItemBlock" type="StaticBody2D"]
 collision_layer = 4
@@ -49,6 +49,6 @@ collision_mask = 18
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -16)
+position = Vector2(0, -8.5)
 shape = SubResource("RectangleShape2D_8r6n6")
 debug_color = Color(1, 0.6, 0, 0.419608)
