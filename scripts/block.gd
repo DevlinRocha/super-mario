@@ -41,6 +41,7 @@ func _on_hit() -> void:
 	item.visible = true
 	var item_tween := create_tween()
 	item_tween.tween_property(item, "position", item.position - Vector2(0, 16), 0.5)
+	item = null
 
 
 func _on_body_entered_hitbox(body: Node2D) -> void:
