@@ -7,7 +7,6 @@ extends StaticBody2D
 signal hit
 
 
-@export var item: PackedScene
 @onready var hitbox: Area2D = $Hitbox
 
 
@@ -45,9 +44,11 @@ func _on_hit() -> void:
 
 	items.set_cell(grid_position + Vector2i(0, -1), source_id, Vector2i(0, 0), alt_id)
 
+
 func _on_body_entered_hitbox(body: Node2D) -> void:
 	if body is Enemy:
 		enemies_above.append(body)
+
 
 func _on_body_exited_hitbox(body: Node2D) -> void:
 	if body is Enemy:
