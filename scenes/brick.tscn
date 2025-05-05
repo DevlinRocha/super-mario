@@ -44,10 +44,10 @@ shape = SubResource("RectangleShape2D_3gtdk")
 
 [node name="Hitbox" type="Area2D" parent="."]
 visible = false
+position = Vector2(0, -8.5)
 collision_layer = 4
 collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -8.5)
 shape = SubResource("RectangleShape2D_5l4w1")
 debug_color = Color(1, 0.6, 0, 0.419608)
