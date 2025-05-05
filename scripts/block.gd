@@ -31,9 +31,19 @@ func _on_hit() -> void:
 	var grid_position := items.local_to_map(position)
 	var source_id := items.get_cell_source_id(grid_position)
 	var alt_id = items.get_cell_alternative_tile(grid_position)
-	items.set_cell(grid_position + Vector2i(0, -1), source_id, Vector2i(0, 0), alt_id)
 	items.set_cell(grid_position, -1)
 
+	var up := create_tween()
+	up.tween_property(self, "position", position - Vector2(0, 4), 0.1)
+	await up.finished
+	var down := create_tween()
+	down.tween_property(self, "position", position + Vector2(0, 6), 0.1)
+	await down.finished
+	var reset := create_tween()
+	reset.tween_property(self, "position", position - Vector2(0, 2), 0.1)
+	await reset.finished
+
+	items.set_cell(grid_position + Vector2i(0, -1), source_id, Vector2i(0, 0), alt_id)
 
 func _on_body_entered_hitbox(body: Node2D) -> void:
 	if body is Enemy:
