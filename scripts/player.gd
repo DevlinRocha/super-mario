@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	if ray_cast_2d_up.is_colliding():
 		var collider = ray_cast_2d_up.get_collider()
 		if collider is Block:
-			collider.hit.emit()
+			collider.hit.emit(self)
 
 
 func handle_movement(delta: float) -> void:

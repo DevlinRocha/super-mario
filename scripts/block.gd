@@ -25,14 +25,16 @@ func _ready() -> void:
 	find_item(position)
 
 
-func _on_hit() -> void:
+func _on_hit(player: Player) -> void:
 	if enemies_above:
 		for enemy in enemies_above:
 			enemy.hit.emit()
+			player.increase_score.emit(100)
 
 	if items_above:
 		for item in items_above:
 			item.collected.emit()
+			player.coin_collected.emit()
 
 	var up := create_tween()
 	up.tween_property(self, "position", position - Vector2(0, 4), 0.1)
