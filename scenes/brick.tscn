@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=4 uid="uid://ci3i1qnoxpvs5"]
+[gd_scene load_steps=5 format=4 uid="uid://ci3i1qnoxpvs5"]
+
+[ext_resource type="Script" uid="uid://bksi6hnoiho5r" path="res://scripts/block.gd" id="1_5l4w1"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_5l4w1"]
 _data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABQAAAAUklGRkgAAABXRUJQVlA4TDwAAAAvD8ADABcgFkzm/4aUpEAgyd9iwRnEgsn8Efoynf/ATw0G2UYaz3xOcpqfd4jof2xb5gGYfYDMD2D2AQA=")
@@ -7,9 +9,13 @@ size_override = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtdk"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4w1"]
+size = Vector2(16, 16)
+
 [node name="Brick" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 7
+script = ExtResource("1_5l4w1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -35,3 +41,10 @@ metadata/_aseprite_wizard_source_file_hash_ = "54c05a02a7583f6901194fe200181827"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_3gtdk")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_5l4w1")
+debug_color = Color(1, 0.6, 0, 0.419608)
