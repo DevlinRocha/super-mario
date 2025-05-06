@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 
 const SPEED := 120.0
+const SPRINT_SPEED := 160
 const JUMP_VELOCITY := -352.0
 var jumping := false
 var bonus_points := 0
@@ -55,7 +56,11 @@ func handle_movement(delta: float) -> void:
 	if !direction:
 		velocity.x = move_toward(velocity.x, 0, delta)
 
-	velocity.x = direction * SPEED
+	if Input.is_action_pressed("sprint"):
+		velocity.x = direction * SPRINT_SPEED
+	else:
+		velocity.x = direction * SPEED
+
 	# Handle animations.
 	if not jumping: animation_player.play("Moving")
 	if velocity == Vector2(0, 0):
