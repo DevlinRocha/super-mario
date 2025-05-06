@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bksi6hnoiho5r" path="res://scripts/block.gd" id="1_8r6n6"]
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_8r6n6"]
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_xpfwp"]
 _data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABsAAAAUklGRmQAAABXRUJQVlA4TFgAAAAvD8ADEB8gEEjyt5hgXSFBwv/oYWP+A3wFjGrbVhKNFH8xZGY3BLRwG+n9loBCPwMOISL6Pwf7dXmSREOG8rSQwQY5pH95Bul8SDdDcoR08peGYyhJCCEE")
 size_override = Vector2(16, 16)
 
@@ -19,7 +19,7 @@ script = ExtResource("1_8r6n6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_8r6n6")
+texture = SubResource("PortableCompressedTexture2D_xpfwp")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -36,7 +36,7 @@ metadata/_aseprite_wizard_config_ = {
 "slice": "",
 "source": "res://assets/item_block.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "d2464b9055ddfd427ddd41d765187c0f"
+metadata/_aseprite_wizard_source_file_hash_ = "1394cb05f029667d354bff45e5040344"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
