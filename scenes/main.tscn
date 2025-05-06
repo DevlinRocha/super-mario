@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://lcagquxonxna"]
+[gd_scene load_steps=21 format=4 uid="uid://lcagquxonxna"]
 
 [ext_resource type="PackedScene" uid="uid://cm5xjat8emnnv" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bk4gdeirtcgl6" path="res://scripts/camera.gd" id="2_85g3d"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://8ub0hvkr1c2k" path="res://scenes/stone.tscn" id="9_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cqgmymhkds3fj" path="res://scenes/pipe_body.tscn" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://cm2hh4moftkgf" path="res://scenes/pipe_entrance.tscn" id="11_a8y0u"]
+[ext_resource type="Script" uid="uid://bpcf2sqd8o4hx" path="res://scripts/killbox.gd" id="13_trceg"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ya4ey"]
 scenes/1/scene = ExtResource("4_choun")
@@ -81,6 +82,7 @@ tile_set = SubResource("TileSet_0wfyh")
 position = Vector2(1500, 248)
 collision_layer = 0
 collision_mask = 27
+script = ExtResource("13_trceg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killbox"]
 shape = SubResource("RectangleShape2D_eb6dy")
