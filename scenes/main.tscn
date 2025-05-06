@@ -52,7 +52,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAQABAAEAAAAAAAA
 tile_set = SubResource("TileSet_85g3d")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(2082, 130)
+position = Vector2(48, 200)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
