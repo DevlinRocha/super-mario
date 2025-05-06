@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://lcagquxonxna"]
+[gd_scene load_steps=20 format=4 uid="uid://lcagquxonxna"]
 
 [ext_resource type="PackedScene" uid="uid://cm5xjat8emnnv" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bk4gdeirtcgl6" path="res://scripts/camera.gd" id="2_85g3d"]
@@ -41,6 +41,9 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 27
 sources/0 = SubResource("TileSetScenesCollectionSource_o5qli")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6dy"]
+size = Vector2(3000, 16)
+
 [node name="Main" type="Node"]
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -73,3 +76,11 @@ tile_map_data = PackedByteArray("AAAWAAUAAAAAAAAAAgAVAAkAAAAAAAAAAgAXAAkAAAAAAAA
 tile_set = SubResource("TileSet_0wfyh")
 
 [node name="UI" parent="." instance=ExtResource("6_tefeu")]
+
+[node name="Killbox" type="Area2D" parent="."]
+position = Vector2(1500, 248)
+collision_layer = 0
+collision_mask = 27
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killbox"]
+shape = SubResource("RectangleShape2D_eb6dy")
