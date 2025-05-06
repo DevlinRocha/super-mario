@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqgmymhkds3fj"]
+[gd_scene load_steps=3 format=4 uid="uid://cqgmymhkds3fj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fsqa"]
 size = Vector2(32, 16)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_nfjea"]
+_data = PackedByteArray("AAADAAUAAAABAAAAHAAAABAAAABMAAAAUklGRkQAAABXRUJQVlA4TDcAAAAvG8ADABcgEEhCG3VsgUCKQ5vigZr/wKODmgAgmDz0EWH3EWEF9foj+k8wSVNtx2wFEeMh4cEBAA==")
+size_override = Vector2(28, 16)
 
 [node name="PipeBody" type="StaticBody2D"]
 collision_layer = 4
@@ -9,3 +13,24 @@ collision_mask = 27
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2fsqa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_nfjea")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/pipe_body.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1a166861d59456a0b3c8fa48aa105609"

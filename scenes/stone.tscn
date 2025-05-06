@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ub0hvkr1c2k"]
+[gd_scene load_steps=3 format=4 uid="uid://8ub0hvkr1c2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmt60"]
 size = Vector2(16, 16)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_bmt60"]
+_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABaAAAAUklGRlIAAABXRUJQVlA4TEYAAAAvD8ADABcgEEjCH21EIUHC/+hhBQJJgOMOOP+BvwoURZITDTcG8sdUEhCAD0xgAqc4iOh/mKos1bJVw1VF3/sUiAV6gAEc")
+size_override = Vector2(16, 16)
 
 [node name="Stone" type="StaticBody2D"]
 collision_layer = 4
@@ -9,3 +13,24 @@ collision_mask = 27
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_bmt60")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_bmt60")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/stone.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "026ea10cce39aae7ad4735fcefc4ce7a"
