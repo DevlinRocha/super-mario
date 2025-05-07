@@ -8,6 +8,8 @@ signal enter
 
 
 @export var destination: Vector2
+@export var camera_limit_left: int
+@export var camera_limit_right: int
 
 
 func _ready() -> void:

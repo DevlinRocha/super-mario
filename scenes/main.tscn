@@ -92,3 +92,5 @@ shape = SubResource("RectangleShape2D_eb6dy")
 [node name="PipeEntrance" parent="." instance=ExtResource("14_a8y0u")]
 position = Vector2(928, 144)
 destination = Vector2(3347, 48)
+camera_limit_left = 3312
+camera_limit_right = 3568

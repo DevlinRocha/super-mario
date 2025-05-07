@@ -79,6 +79,8 @@ func handle_movement(delta: float) -> void:
 		var collider = ray_cast_2d_down.get_collider()
 		if collider is Warp:
 			collider.enter.emit(self)
+			camera_2d.limit_left = collider.camera_limit_left
+			camera_2d.limit_right = collider.camera_limit_right
 
 	move_and_slide()
 
