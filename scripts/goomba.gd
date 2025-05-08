@@ -8,16 +8,20 @@ signal hit
 
 const SPEED := 40
 var direction := -1
+var move = false
 
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var hurtbox: Area2D = $Hurtbox
 @onready var hitbox: Area2D = $Hitbox
+@onready var detection: Area2D = $Detection
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
 	hurtbox.area_entered.connect(_on_area_entered_hurtbox)
+	detection.body_entered.connect(func(body: Node2D): move = true)
+	
 	hit.connect(_on_hit)
 	animation_player.play("Moving")
 
@@ -29,7 +33,9 @@ func _physics_process(delta: float) -> void:
 
 	velocity.x = SPEED * direction
 
-	move_and_slide()
+	if move:
+		move_and_slide()
+
 	if is_on_wall():
 		direction *= -1
 
