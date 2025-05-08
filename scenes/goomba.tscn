@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://b7giw71i7g27p"]
+[gd_scene load_steps=9 format=4 uid="uid://b7giw71i7g27p"]
 
 [ext_resource type="Script" uid="uid://ctrmk5msnipo5" path="res://scripts/goomba.gd" id="1_21hcc"]
 
@@ -37,6 +37,9 @@ height = 14.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1jgw"]
 radius = 4.0
 height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21hcc"]
+size = Vector2(80, 560)
 
 [node name="Goomba" type="CharacterBody2D"]
 collision_layer = 2
@@ -96,3 +99,11 @@ position = Vector2(0, -1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_s1jgw")
 debug_color = Color(1, 0.6, 0, 0.419608)
+
+[node name="Detection" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+position = Vector2(-288, 0)
+shape = SubResource("RectangleShape2D_21hcc")
