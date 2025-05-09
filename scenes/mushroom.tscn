@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b06n5bov6dqsr"]
+[gd_scene load_steps=4 format=3 uid="uid://b06n5bov6dqsr"]
 
 [ext_resource type="Script" uid="uid://cp8i8npav4kax" path="res://scripts/mushroom.gd" id="1_b0s10"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drnli"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0s10"]
+size = Vector2(16, 16)
+
 [node name="Mushroom" type="CharacterBody2D"]
 collision_layer = 16
-collision_mask = 5
+collision_mask = 4
 script = ExtResource("1_b0s10")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -18,4 +21,11 @@ offset_bottom = 8.0
 color = Color(0, 1, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_drnli")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_b0s10")
