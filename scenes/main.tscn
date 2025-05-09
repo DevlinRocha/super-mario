@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://lcagquxonxna"]
+[gd_scene load_steps=24 format=4 uid="uid://lcagquxonxna"]
 
 [ext_resource type="PackedScene" uid="uid://cm5xjat8emnnv" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bk4gdeirtcgl6" path="res://scripts/camera.gd" id="2_85g3d"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://1jkqc1a2206b" path="res://scenes/sky.tscn" id="4_choun"]
 [ext_resource type="PackedScene" uid="uid://dluv1nl7vqfjo" path="res://scenes/coin.tscn" id="5_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://b7giw71i7g27p" path="res://scenes/goomba.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b06n5bov6dqsr" path="res://scenes/mushroom.tscn" id="6_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cfrvkswhdxngf" path="res://scenes/ui.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ci3i1qnoxpvs5" path="res://scenes/brick.tscn" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://8ub0hvkr1c2k" path="res://scenes/stone.tscn" id="9_eb6dy"]
@@ -25,6 +26,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_ya4ey")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_85g3d"]
 scenes/1/scene = ExtResource("5_o6xl0")
+scenes/2/scene = ExtResource("6_jbj1t")
 
 [sub_resource type="TileSet" id="TileSet_choun"]
 sources/0 = SubResource("TileSetScenesCollectionSource_85g3d")
@@ -73,7 +75,7 @@ drag_bottom_margin = 1.0
 script = ExtResource("2_85g3d")
 
 [node name="Items" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAQAAkAAAAAAAAAAQDTAAkAAAAAAAAAAQDUAAkAAAAAAAAAAQDVAAkAAAAAAAAAAQDWAAkAAAAAAAAAAQDXAAkAAAAAAAAAAQDYAAkAAAAAAAAAAQDZAAkAAAAAAAAAAQDZAAcAAAAAAAAAAQDYAAcAAAAAAAAAAQDTAAcAAAAAAAAAAQDUAAcAAAAAAAAAAQDVAAcAAAAAAAAAAQDWAAcAAAAAAAAAAQDXAAcAAAAAAAAAAQDUAAUAAAAAAAAAAQDVAAUAAAAAAAAAAQDWAAUAAAAAAAAAAQDXAAUAAAAAAAAAAQDYAAUAAAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AADTAAkAAAAAAAAAAQDUAAkAAAAAAAAAAQDVAAkAAAAAAAAAAQDWAAkAAAAAAAAAAQDXAAkAAAAAAAAAAQDYAAkAAAAAAAAAAQDZAAkAAAAAAAAAAQDZAAcAAAAAAAAAAQDYAAcAAAAAAAAAAQDTAAcAAAAAAAAAAQDUAAcAAAAAAAAAAQDVAAcAAAAAAAAAAQDWAAcAAAAAAAAAAQDXAAcAAAAAAAAAAQDUAAUAAAAAAAAAAQDVAAUAAAAAAAAAAQDWAAUAAAAAAAAAAQDXAAUAAAAAAAAAAQDYAAUAAAAAAAAAAQAQAAkAAAAAAAAAAQA=")
 tile_set = SubResource("TileSet_choun")
 
 [node name="Foreground" type="TileMapLayer" parent="."]
