@@ -50,6 +50,7 @@ func _on_hit(player: Player) -> void:
 	item_inside.visible = true
 	var item_tween := create_tween()
 	item_tween.tween_property(item_inside, "position", item_inside.position - Vector2(0, 16), 0.5)
+	item_inside.in_block = false
 	item_inside = null
 
 
@@ -78,3 +79,4 @@ func find_item(coords: Vector2) -> void:
 		if child.position.is_equal_approx(coords):
 			item_inside = child
 			item_inside.visible = false
+			item_inside.in_block = true
