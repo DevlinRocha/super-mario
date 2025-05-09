@@ -10,6 +10,7 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.coin_collected.connect(_on_coin_collected)
+	player.mushroom_collected.connect(_on_mushroom_collected)
 	player.increase_score.connect(increase_score)
 	decrement_timer()
 
@@ -25,6 +26,10 @@ func _process(delta: float) -> void:
 func _on_coin_collected() -> void:
 	increase_score(200)
 	increase_coins(1)
+
+
+func _on_mushroom_collected() -> void:
+	increase_score(1000)
 
 
 func increase_score(value: int) -> void:

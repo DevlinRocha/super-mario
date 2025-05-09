@@ -12,6 +12,8 @@ var bonus_points := 0
 
 signal increase_score
 signal coin_collected
+signal mushroom_collected
+
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ray_cast_2d_up: RayCast2D = $RayCast2DUp
