@@ -7,6 +7,9 @@ extends Area2D
 signal collected
 
 
+var in_block := false
+
+
 func _ready() -> void:
 	collected.connect(_on_collected)
 	body_entered.connect(_on_body_entered)
