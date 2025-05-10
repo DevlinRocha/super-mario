@@ -8,7 +8,7 @@ signal hit
 
 const SPEED := 40
 var direction := -1
-var move = false
+var move := false
 
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -20,7 +20,7 @@ var move = false
 
 func _ready() -> void:
 	hurtbox.area_entered.connect(_on_area_entered_hurtbox)
-	detection.body_entered.connect(func(body: Node2D): move = true)
+	detection.body_entered.connect(func(body: Node2D) -> void: move = true)
 	
 	hit.connect(_on_hit)
 	animation_player.play("Moving")
@@ -48,7 +48,7 @@ func _on_area_entered_hurtbox(area: Area2D) -> void:
 		hurtbox.collision_layer = 0
 		hurtbox.collision_mask = 0
 		hitbox.collision_layer = 0
-		await get_tree().create_timer(0.5).timeout.connect(func(): queue_free())
+		await get_tree().create_timer(0.5).timeout.connect(func() -> void: queue_free())
 
 
 

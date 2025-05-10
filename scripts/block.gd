@@ -10,7 +10,7 @@ signal hit
 @onready var hitbox: Area2D = $Hitbox
 
 
-var item_inside
+var item_inside: Node
 var items_above := []
 var enemies_above := []
 
@@ -27,12 +27,12 @@ func _ready() -> void:
 
 func _on_hit(player: Player) -> void:
 	if enemies_above:
-		for enemy in enemies_above:
+		for enemy: Enemy in enemies_above:
 			enemy.hit.emit()
 			player.increase_score.emit(100)
 
 	if items_above:
-		for item in items_above:
+		for item: Item in items_above:
 			item.collected.emit()
 			player.coin_collected.emit()
 
@@ -74,7 +74,7 @@ func _on_body_exited_hitbox(body: Node2D) -> void:
 
 
 func find_item(coords: Vector2) -> void:
-	var items = get_node("../../Items")
+	var items := get_node("../../Items")
 	for child in items.get_children():
 		if child.position.is_equal_approx(coords):
 			item_inside = child

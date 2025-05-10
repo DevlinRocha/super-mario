@@ -16,5 +16,5 @@ func _ready() -> void:
 	enter.connect(_on_enter)
 
 
-func _on_enter(target) -> void:
+func _on_enter(target: Node) -> void:
 	target.position = destination

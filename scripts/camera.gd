@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var current_position = get_screen_center_position().x
+	var current_position := get_screen_center_position().x
 	if current_position > greatest_position:
 		greatest_position = current_position
 		limit_left = greatest_position - starting_position

@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 
 	if ray_cast_2d_up.is_colliding():
-		var collider = ray_cast_2d_up.get_collider()
+		var collider := ray_cast_2d_up.get_collider()
 		if collider is Block:
 			collider.hit.emit(self)
 
@@ -78,7 +78,7 @@ func handle_movement(delta: float) -> void:
 
 
 	if Input.is_action_just_pressed("down") and is_on_floor() and ray_cast_2d_down.is_colliding():
-		var collider = ray_cast_2d_down.get_collider()
+		var collider := ray_cast_2d_down.get_collider()
 		if collider is Warp:
 			collider.enter.emit(self)
 			camera_2d.limit_left = collider.camera_limit_left
