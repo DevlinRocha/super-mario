@@ -1,15 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnp065xsx3o5r"]
+[gd_scene load_steps=3 format=3 uid="uid://cnp065xsx3o5r"]
 
 [ext_resource type="Theme" uid="uid://y0hrr47hg4nq" path="res://resources/theme.tres" id="1_cgdw4"]
+[ext_resource type="Script" uid="uid://lkr4u55dpf8o" path="res://scripts/score_increase.gd" id="1_iba4n"]
 
 [node name="ScoreIncrease" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 8.0
+script = ExtResource("1_iba4n")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
