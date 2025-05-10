@@ -48,8 +48,7 @@ func _on_area_entered_hurtbox(area: Area2D) -> void:
 		hurtbox.collision_layer = 0
 		hurtbox.collision_mask = 0
 		hitbox.collision_layer = 0
-		await get_tree().create_timer(0.5).timeout.connect(func() -> void: queue_free())
-
+		await get_tree().create_timer(0.5, false).timeout.connect(func() -> void: queue_free())
 
 
 func _on_hit() -> void:
