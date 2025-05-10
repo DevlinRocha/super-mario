@@ -22,4 +22,4 @@ func _on_collected() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		_on_collected()
-		body.coin_collected.emit()
+		body.coin_collected.emit(position)

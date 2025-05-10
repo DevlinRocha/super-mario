@@ -29,7 +29,7 @@ func _on_hit(player: Player) -> void:
 	if enemies_above:
 		for enemy: Enemy in enemies_above:
 			enemy.hit.emit()
-			player.increase_score.emit(100)
+			player.increase_score.emit(100, enemy.position)
 
 	if items_above:
 		for item: Item in items_above:
