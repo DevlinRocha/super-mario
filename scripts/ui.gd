@@ -7,6 +7,9 @@ extends CanvasLayer
 @onready var timer: Label = $HUD/Time/Timer
 
 
+const SCORE_INCREASE = preload("res://scenes/score_increase.tscn")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.coin_collected.connect(_on_coin_collected)
@@ -23,16 +26,17 @@ func _process(delta: float) -> void:
 		get_tree().reload_current_scene()
 
 
-func _on_coin_collected() -> void:
-	increase_score(200)
+func _on_coin_collected(score_position: Vector2) -> void:
+	increase_score(200, score_position)
 	increase_coins(1)
 
 
-func _on_mushroom_collected() -> void:
-	increase_score(1000)
+func _on_mushroom_collected(score_position: Vector2) -> void:
+	increase_score(1000, score_position)
 
 
-func increase_score(value: int) -> void:
+func increase_score(value: int, score_position: Vector2) -> void:
+	display_points(value, score_position)
 	score.text = str("%06d" % (int(score.text) + value))
 
 
@@ -46,3 +50,10 @@ func decrement_timer() -> void:
 		get_tree().create_timer(1, false).timeout.connect(decrement_timer)
 	else:
 		get_tree().reload_current_scene()
+
+
+func display_points(points: int, score_position: Vector2) -> void:
+	var score := SCORE_INCREASE.instantiate()
+	score.points = points
+	score.position = score_position - Vector2(0, 24)
+	add_sibling(score)
