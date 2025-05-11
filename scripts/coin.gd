@@ -23,3 +23,14 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		_on_collected()
 		body.coin_collected.emit(position)
+
+
+func collect_from_block(player: Node2D) -> void:
+	var up := create_tween()
+	up.tween_property(self, "position", position - Vector2(0, 64), 0.25)
+	await up.finished
+	var down := create_tween()
+	down.tween_property(self, "position", position + Vector2(0, 40), 0.25)
+	await down.finished
+	_on_collected()
+	player.coin_collected.emit(position + Vector2(0, 16))
