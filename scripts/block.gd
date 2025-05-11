@@ -48,6 +48,11 @@ func _on_hit(player: Player) -> void:
 
 	if !item_inside: return
 	item_inside.visible = true
+
+	if item_inside is Item:
+		item_inside.collect_from_block(player)
+		return
+
 	var item_tween := create_tween()
 	item_tween.tween_property(item_inside, "position", item_inside.position - Vector2(0, 16), 0.5)
 	item_inside.in_block = false
