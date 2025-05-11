@@ -36,6 +36,10 @@ func _on_hit(player: Player) -> void:
 			item.collected.emit()
 			player.coin_collected.emit()
 
+	if item_inside is Item:
+		item_inside.collect_from_block(player)
+		item_inside = null
+
 	var up := create_tween()
 	up.tween_property(self, "position", position - Vector2(0, 4), 0.1)
 	await up.finished
@@ -48,10 +52,6 @@ func _on_hit(player: Player) -> void:
 
 	if !item_inside: return
 	item_inside.visible = true
-
-	if item_inside is Item:
-		item_inside.collect_from_block(player)
-		return
 
 	var item_tween := create_tween()
 	item_tween.tween_property(item_inside, "position", item_inside.position - Vector2(0, 16), 0.5)
