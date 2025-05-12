@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 		get_tree().reload_current_scene()
 
 
-func _on_coin_collected(score_position: Vector2) -> void:
+func _on_coin_collected(score_position := Vector2(0, 0)) -> void:
 	increase_score(200, score_position)
 	increase_coins(1)
 
