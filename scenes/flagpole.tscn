@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmafsalj5onvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikjtc"]
+size = Vector2(2, 144)
+
+[node name="Flagpole" type="Area2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -72.0
+offset_right = 1.0
+offset_bottom = 72.0
+color = Color(0, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ikjtc")
