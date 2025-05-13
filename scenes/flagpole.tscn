@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmafsalj5onvp"]
+[gd_scene load_steps=3 format=3 uid="uid://dmafsalj5onvp"]
+
+[ext_resource type="Script" uid="uid://djdpkmi4qy54" path="res://scripts/flagpole.gd" id="1_cqari"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikjtc"]
 size = Vector2(2, 144)
 
 [node name="Flagpole" type="Area2D"]
+script = ExtResource("1_cqari")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1.0
@@ -14,3 +17,6 @@ color = Color(0, 1, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ikjtc")
+
+[node name="Bottom" type="Marker2D" parent="."]
+position = Vector2(0, 64)
