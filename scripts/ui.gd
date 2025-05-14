@@ -16,6 +16,7 @@ func _ready() -> void:
 	player.coin_collected.connect(_on_coin_collected)
 	player.mushroom_collected.connect(_on_mushroom_collected)
 	player.increase_score.connect(increase_score)
+	console.player = player
 	decrement_timer()
 
 
