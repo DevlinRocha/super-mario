@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 		get_tree().paused = !get_tree().paused
 		console.visible = false
 
-	if Input.is_action_just_pressed("restart"):
+	if Input.is_action_just_pressed("restart") and !console.visible:
 		get_tree().reload_current_scene()
 
 
