@@ -1,6 +1,9 @@
 extends LineEdit
 
 
+var history := []
+
+
 func _ready() -> void:
 	text_changed.connect(_on_text_changed)
 	text_submitted.connect(_on_text_submitted)
@@ -25,5 +28,6 @@ func _on_text_changed(new_text: String) -> void:
 
 
 func _on_text_submitted(new_text: String) -> void:
+	history.append(new_text)
 	text = ""
 	grab_focus()
