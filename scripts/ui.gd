@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var score: Label = %Score
 @onready var coin_count: Label = %CoinCount
 @onready var timer: Label = $HUD/Time/Timer
+@onready var console: LineEdit = $Console
 
 
 const SCORE_INCREASE = preload("res://scenes/score_increase.tscn")
@@ -21,6 +22,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = !get_tree().paused
+		console.visible = false
 
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
