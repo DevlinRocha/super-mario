@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfrvkswhdxngf"]
+[gd_scene load_steps=4 format=3 uid="uid://cfrvkswhdxngf"]
 
 [ext_resource type="Theme" uid="uid://y0hrr47hg4nq" path="res://resources/theme.tres" id="1_x4jx1"]
 [ext_resource type="Script" uid="uid://ctepbk1mob0ow" path="res://scripts/ui.gd" id="1_yev5y"]
+[ext_resource type="Script" uid="uid://frnfh5pcc3ss" path="res://scripts/console.gd" id="3_yev5y"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
@@ -71,3 +72,16 @@ text = "TIME"
 layout_mode = 2
 text = "400"
 horizontal_alignment = 2
+
+[node name="Console" type="LineEdit" parent="."]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_x4jx1")
+placeholder_text = "Console..."
+script = ExtResource("3_yev5y")
