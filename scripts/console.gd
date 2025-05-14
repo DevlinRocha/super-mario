@@ -1,6 +1,9 @@
 extends LineEdit
 
 
+var player: Player
+
+
 var history := []
 
 
@@ -28,6 +31,9 @@ func _on_text_changed(new_text: String) -> void:
 
 
 func _on_text_submitted(new_text: String) -> void:
+	if new_text == "teleport" || "tp":
+		player.position = Vector2(2998, 72)
+
 	history.append(new_text)
 	text = ""
 	grab_focus()
