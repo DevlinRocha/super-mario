@@ -31,11 +31,11 @@ func _on_text_changed(new_text: String) -> void:
 
 
 func _on_text_submitted(new_text: String) -> void:
-	if new_text == "teleport" || new_text == "tp":
-		player.position = Vector2(2998, 72)
-
-	if new_text == "god":
-		player.hurtbox.monitoring = false
+	match new_text:
+		"teleport", "tp":
+			player.position = Vector2(2998, 72)
+		"god":
+			player.hurtbox.monitoring = false
 
 	history.append(new_text)
 	text = ""
