@@ -17,10 +17,8 @@ func _process(delta: float) -> void:
 		var paused := !visible
 		get_tree().paused = paused
 		visible = paused
-		if visible:
+		if paused:
 			grab_focus()
-		else:
-			release_focus()
 
 
 func _on_text_changed(new_text: String) -> void:
