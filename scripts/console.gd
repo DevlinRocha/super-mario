@@ -34,6 +34,9 @@ func _on_text_submitted(new_text: String) -> void:
 	if new_text == "teleport" || new_text == "tp":
 		player.position = Vector2(2998, 72)
 
+	if new_text == "god":
+		player.hurtbox.monitoring = false
+
 	history.append(new_text)
 	text = ""
 	grab_focus()
