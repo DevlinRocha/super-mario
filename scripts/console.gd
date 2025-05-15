@@ -31,7 +31,7 @@ func _on_text_changed(new_text: String) -> void:
 
 
 func _on_text_submitted(new_text: String) -> void:
-	if new_text == "teleport" || "tp":
+	if new_text == "teleport" || new_text == "tp":
 		player.position = Vector2(2998, 72)
 
 	history.append(new_text)
