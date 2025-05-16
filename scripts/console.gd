@@ -34,6 +34,8 @@ func _on_text_submitted(new_text: String) -> void:
 			player.position = Vector2(2998, 72)
 		"god":
 			player.hurtbox.monitoring = false
+		"quit":
+			get_tree().quit()
 
 	history.append(new_text)
 	text = ""
