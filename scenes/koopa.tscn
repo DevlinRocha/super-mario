@@ -9,7 +9,7 @@ size = Vector2(16, 16)
 size = Vector2(14, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_py2lt"]
-size = Vector2(14, 14)
+size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyfma"]
 size = Vector2(80, 560)
@@ -33,23 +33,26 @@ offset_right = -4.0
 offset_bottom = 8.0
 color = Color(1, 1, 0, 1)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("RectangleShape2D_khn87")
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." groups=["Hurtbox"]]
 visible = false
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_v04mq")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." groups=["Hitbox"]]
 visible = false
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_py2lt")
 debug_color = Color(1, 0.6, 0, 0.419608)
 
@@ -60,5 +63,3 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
 position = Vector2(-288, 0)
 shape = SubResource("RectangleShape2D_tyfma")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
