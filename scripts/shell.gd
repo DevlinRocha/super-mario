@@ -38,7 +38,7 @@ func _on_body_entered_area_2d(body: Node2D) -> void:
 			else:
 				direction = 1
 		else:
-			get_tree().reload_current_scene()
+			body.hit.emit()
 
 
 func _on_hit() -> void:
