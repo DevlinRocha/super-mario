@@ -13,6 +13,7 @@ var bonus_points := 0
 var handling_input := true
 
 
+signal hit
 signal increase_score
 signal coin_collected
 signal mushroom_collected
@@ -30,6 +31,7 @@ signal mushroom_collected
 func _ready() -> void:
 	hurtbox.area_entered.connect(_on_area_entered_hurtbox)
 	hitbox.area_entered.connect(_on_area_entered_hitbox)
+	hit.connect(_on_hit)
 
 
 func _physics_process(delta: float) -> void:
@@ -94,7 +96,7 @@ func handle_movement(delta: float) -> void:
 
 func _on_area_entered_hurtbox(area: Area2D) -> void:
 	if area.is_in_group("Hitbox"):
-		get_tree().reload_current_scene()
+		hit.emit()
 
 
 func _on_area_entered_hitbox(area: Area2D) -> void:
@@ -102,3 +104,7 @@ func _on_area_entered_hitbox(area: Area2D) -> void:
 		velocity.y = JUMP_VELOCITY / 2
 		increase_score.emit(100 + bonus_points, area.global_position)
 		bonus_points += 100
+
+
+func _on_hit() -> void:
+	get_tree().reload_current_scene()
