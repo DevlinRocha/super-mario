@@ -4,7 +4,7 @@ extends CharacterBody2D
 signal hit
 
 
-const SPEED := 200
+const SPEED := 160
 var direction := 0
 
 
