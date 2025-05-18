@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://p7vtrurg3pxh"]
+[gd_scene load_steps=5 format=3 uid="uid://p7vtrurg3pxh"]
 
 [ext_resource type="Script" uid="uid://dmig8luwrho10" path="res://scripts/shell.gd" id="1_bo4bk"]
 
@@ -6,7 +6,10 @@
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo4bk"]
-size = Vector2(16, 16)
+size = Vector2(16, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb42f"]
+size = Vector2(12, 12)
 
 [node name="Shell" type="CharacterBody2D"]
 collision_layer = 2
@@ -21,10 +24,19 @@ offset_bottom = 8.0
 color = Color(1, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_efm2f")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." groups=["Hurtbox"]]
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_bo4bk")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Hitbox"]]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_sb42f")
+debug_color = Color(1, 0.6, 0, 0.419608)
