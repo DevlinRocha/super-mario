@@ -24,6 +24,7 @@ signal mushroom_collected
 @onready var ray_cast_2d_down: RayCast2D = $RayCast2DDown
 @onready var hurtbox: Area2D = $Hurtbox
 @onready var hitbox: Area2D = $Hitbox
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var camera_2d: Camera2D = $Camera2D
 
@@ -36,6 +37,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
+
+	if not handling_input: return
 
 	if ray_cast_2d_up.is_colliding():
 		var collider := ray_cast_2d_up.get_collider()
@@ -95,11 +98,15 @@ func handle_movement(delta: float) -> void:
 
 
 func _on_area_entered_hurtbox(area: Area2D) -> void:
+	if not handling_input: return
+
 	if area.is_in_group("Hitbox"):
 		hit.emit()
 
 
 func _on_area_entered_hitbox(area: Area2D) -> void:
+	if not handling_input: return
+
 	if area.is_in_group("Hurtbox") and not is_on_floor():
 		velocity.y = JUMP_VELOCITY / 2
 		increase_score.emit(100 + bonus_points, area.global_position)
@@ -107,4 +114,14 @@ func _on_area_entered_hitbox(area: Area2D) -> void:
 
 
 func _on_hit() -> void:
+	handling_input = false
+	animation_player.stop()
+
+
+	var up := create_tween()
+	up.tween_property(self, "position", position - Vector2(0, 32), 0.5)
+	await up.finished
+	var down := create_tween()
+	down.tween_property(self, "position", position + Vector2(0, 64), 0.5)
+	await down.finished
 	get_tree().reload_current_scene()
