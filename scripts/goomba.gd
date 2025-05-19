@@ -41,6 +41,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_entered_hurtbox(area: Area2D) -> void:
+	if not area.get_parent().handling_input: return
+
 	if area.is_in_group("Hitbox"):
 		animation_player.stop()
 		direction = 0

@@ -34,6 +34,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_entered_hurtbox(area: Area2D) -> void:
+	if not area.get_parent().handling_input: return
+
 	if area.is_in_group("Hitbox"):
 		if direction == 0:
 			if area.get_parent().sprite_2d.flip_h:
@@ -47,6 +49,8 @@ func _on_area_entered_hurtbox(area: Area2D) -> void:
 
 
 func _on_body_entered_hurtbox(body: Node2D) -> void:
+	if not body.handling_input: return
+
 	if body is Player and body.is_on_floor() and direction == 0:
 		if body.sprite_2d.flip_h:
 			direction = -1
