@@ -7,6 +7,7 @@ extends StaticBody2D
 signal hit
 
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var hitbox: Area2D = $Hitbox
 
 
@@ -26,6 +27,7 @@ func _ready() -> void:
 
 
 func _on_hit(player: Player) -> void:
+	sprite_2d.frame = 1
 	if enemies_above:
 		for enemy: Enemy in enemies_above:
 			enemy.hit.emit()

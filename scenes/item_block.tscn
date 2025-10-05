@@ -1,10 +1,31 @@
-[gd_scene load_steps=5 format=4 uid="uid://bb2k22yhsaj6q"]
+[gd_scene load_steps=7 format=4 uid="uid://bb2k22yhsaj6q"]
 
 [ext_resource type="Script" uid="uid://bksi6hnoiho5r" path="res://scripts/block.gd" id="1_8r6n6"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_xpfwp"]
-_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABsAAAAUklGRmQAAABXRUJQVlA4TFgAAAAvD8ADEB8gEEjyt5hgXSFBwv/oYWP+A3wFjGrbVhKNFH8xZGY3BLRwG+n9loBCPwMOISL6Pwf7dXmSREOG8rSQwQY5pH95Bul8SDdDcoR08peGYyhJCCEE")
-size_override = Vector2(16, 16)
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAABAAAACUAAAAUklGRowAAABXRUJQVlA4TH8AAAAvH8ADEC9AmG201/wVZnCGp0EmbRP/ZwVvBNk2Hdf9uS4gKPJ/tADw/6YLN2BQ204bOgwkgAAkcBIBLANd/s1knDqI6D/BJE2xHdAZbQlPBGFhEsbrE2auYvG6xDLTXMs+WtDZoc70j1iXA80ELuRA4DHZJbmdwOzkdwSl6lwAAA==")
+size_override = Vector2(32, 16)
+
+[sub_resource type="Animation" id="Animation_wxu8k"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cuhq1"]
+_data = {
+&"default": SubResource("Animation_wxu8k")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gtdk"]
 size = Vector2(16, 16)
@@ -20,23 +41,30 @@ script = ExtResource("1_8r6n6")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = SubResource("PortableCompressedTexture2D_xpfwp")
+hframes = 2
 metadata/_aseprite_wizard_interface_config_ = {
+"output_section": false,
 "pending_changes": {}
 }
 metadata/_aseprite_wizard_config_ = {
 "embed_tex": true,
-"i_mode": 1,
+"i_mode": 0,
 "keep_anim_length": false,
 "layers": [],
 "o_ex_p": "",
 "o_folder": "",
 "o_name": "",
 "only_visible": false,
-"player": "",
+"player": "AnimationPlayer",
 "slice": "",
 "source": "res://assets/item_block.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "1394cb05f029667d354bff45e5040344"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cuhq1")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
